@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+
+html {
+  --primary: #2ebdff;
+  --primary-light: #a8e3ff;
+  --secondary: #ffc107;
+  --secondary-light: #ffd864;
+  --dark: #4b4b4b;
+  --light: #ffffff;
+  --dark-light: #dfdfdf;
+}
+
+body {
+  margin: 0;
+  background-color: var(--light);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary-light);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+}
+
+section {
+  margin: auto;
+  max-width: 900px;
+}
+
+section > header {
+  display: flex;
+  align-items: center;
+}
+
+section > header > h2 {
+  font-weight: 400;
+}
+
+.wrapper-blue {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.wrapper-blue * .material-icons-round {
+  color: var(--light);
+}
+
+.wave-to-blue {
+  position: relative;
+  top: 1em;
+}
