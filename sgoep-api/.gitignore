@@ -17,3 +17,4 @@
 .env
 *.db
 sql/fill_tables.sql
+vendor/

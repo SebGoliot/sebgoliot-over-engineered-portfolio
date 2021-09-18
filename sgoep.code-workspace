@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "sgoep-web"
+		},
+		{
+			"path": "sgoep-api"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
