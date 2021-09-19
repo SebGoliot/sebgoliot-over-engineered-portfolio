@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -24,4 +25,27 @@ func getSkills(c *gin.Context) {
 	checkErr(err)
 
 	c.IndentedJSON(http.StatusOK, skills)
+}
+
+func getAchievements(c *gin.Context) {
+
+	var achievements []Achievement
+
+	rows, err := db.Query("SELECT * FROM achievements")
+	checkErr(err)
+	defer rows.Close()
+
+	for rows.Next() {
+		var ach Achievement
+		var techs string
+		err = rows.Scan(
+			&ach.Id, &ach.Name, &ach.Subtitle, &ach.Desc, &ach.Icon,
+			&ach.Link, &ach.Link_icon, &ach.Github, &techs,
+		)
+		ach.Tech = strings.Split(techs, ", ")
+
+		achievements = append(achievements, ach)
+	}
+
+	c.IndentedJSON(http.StatusOK, achievements)
 }
