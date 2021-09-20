@@ -4,12 +4,12 @@
       <span class="material-icons-round">assignment</span>
       <h2>&nbsp;Compétences</h2>
     </header>
-    <pfSkillCards :skills="skills" />
+    <pfSkillCard :skills="skills" />
   </section>
 </template>
 
 <script>
-import PfSkillCards from "./PfSkillCards.vue";
+import PfSkillCard from "./PfSkillCard.vue";
 
 export default {
   name: "PfSkills",
@@ -17,7 +17,7 @@ export default {
     skills: {},
   },
   components: {
-    PfSkillCards,
+    PfSkillCard,
   },
 };
 </script>

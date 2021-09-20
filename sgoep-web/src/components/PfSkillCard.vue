@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "PfSkillCards",
+  name: "PfSkillCard",
   props: {
     skills: {},
   },
