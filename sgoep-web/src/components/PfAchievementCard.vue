@@ -9,8 +9,22 @@
         <div>
           <span class="material-icons-round">{{ ach.icon }}</span>
           <h3 class="card-title">&nbsp;{{ ach.name }}</h3>
-          <div class="availability">
+          <div class="achievement-link">
+            <a
+              v-if="ach.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              :href="ach.link"
+            >
+              <img
+                class="achievement-link-icon"
+                :src="require('@/assets/svg/' + ach.link_icon + '-icon.svg')"
+                :alt="ach.link_icon"
+              />
+            </a>
             <img
+              class="achievement-link-icon unavailable"
+              v-else
               :src="require('@/assets/svg/' + ach.link_icon + '-icon.svg')"
               :alt="ach.link_icon"
             />

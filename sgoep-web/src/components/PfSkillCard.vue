@@ -7,6 +7,7 @@
           :alt="skill.title"
         />
         <h3 class="card-title">&nbsp;{{ skill.title }}</h3>
+        <span v-if="skill.like" class="material-icons-round">favorite</span>
       </header>
       <p>
         <span v-for="(line, key) in skill.desc.split('\\n')" :key="key">
