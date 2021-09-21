@@ -1,11 +1,14 @@
 <template>
-  <Header :author="this.author" />
-  <Portfolio
-    :about="this.author.about"
-    :skills="this.skills"
-    :achievements="this.achievements"
-  />
-  <Footer />
+  <div class="vue-wrapper">
+    <Header :author="this.author" />
+    <Portfolio
+      :about="this.author.about"
+      :skills="this.skills"
+      :achievements="this.achievements"
+      :interests="this.interests"
+    />
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -25,12 +28,14 @@ export default {
       author: {},
       skills: {},
       achievements: {},
+      interests: {},
     };
   },
   created() {
     this.getAuthor();
     this.getSkills();
     this.getAchievements();
+    this.getInterests();
   },
   methods: {
     async getAuthor() {
@@ -44,6 +49,10 @@ export default {
     async getAchievements() {
       const r = await fetch("http://127.0.0.1:5050/achievements");
       this.achievements = await r.json();
+    },
+    async getInterests() {
+      const r = await fetch("http://127.0.0.1:5050/interests");
+      this.interests = await r.json();
     },
   },
 };
