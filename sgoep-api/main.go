@@ -31,6 +31,7 @@ func main() {
 	router.GET("skills", getSkills)
 	router.GET("author", getAuthor)
 	router.GET("achievements", getAchievements)
+	router.GET("interests", getInterests)
 
 	router.Run("127.0.0.1:5050")
 }

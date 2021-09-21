@@ -42,10 +42,20 @@ func getAchievements(c *gin.Context) {
 			&ach.Id, &ach.Name, &ach.Subtitle, &ach.Desc, &ach.Icon,
 			&ach.Link, &ach.Link_icon, &ach.Github, &techs,
 		)
-		ach.Tech = strings.Split(techs, ", ")
+		ach.Tech = strings.Split(techs, " ")
 
 		achievements = append(achievements, ach)
 	}
 
 	c.IndentedJSON(http.StatusOK, achievements)
+}
+
+func getInterests(c *gin.Context) {
+
+	interests := []Interest{}
+
+	err := db.Select(&interests, "SELECT * FROM interests")
+	checkErr(err)
+
+	c.IndentedJSON(http.StatusOK, interests)
 }
