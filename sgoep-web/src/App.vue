@@ -1,16 +1,20 @@
 <template>
-  <Header :author="this.author"/>
-  <Portfolio :about="this.author.about" :skills="this.skills"/>
-  <Footer/>
+  <Header :author="this.author" />
+  <Portfolio
+    :about="this.author.about"
+    :skills="this.skills"
+    :achievements="this.achievements"
+  />
+  <Footer />
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import Portfolio from './components/Portfolio.vue';
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Portfolio from "./components/Portfolio.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Portfolio,
@@ -19,26 +23,30 @@ export default {
   data() {
     return {
       author: {},
-      skills: {}
+      skills: {},
+      achievements: {},
     };
   },
   created() {
     this.getAuthor();
     this.getSkills();
+    this.getAchievements();
   },
   methods: {
     async getAuthor() {
       const r = await fetch("http://127.0.0.1:5050/author");
       this.author = await r.json();
-      console.log(this.author);
     },
     async getSkills() {
       const r = await fetch("http://127.0.0.1:5050/skills");
       this.skills = await r.json();
-      console.log(this.skills);
+    },
+    async getAchievements() {
+      const r = await fetch("http://127.0.0.1:5050/achievements");
+      this.achievements = await r.json();
     },
   },
-}
+};
 </script>
 
 <style>

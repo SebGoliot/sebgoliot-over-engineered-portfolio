@@ -1,6 +1,6 @@
 <template>
   <nav class="card-list section-margin">
-    <div class="skill-card card" v-for="skill in skills" :key="skill.id">
+    <div class="skill-card card" v-for="(skill, key) in skills" :key="key">
       <header>
         <img
           :src="require('@/assets/svg/'+ skill.icon +'-icon.svg')"
