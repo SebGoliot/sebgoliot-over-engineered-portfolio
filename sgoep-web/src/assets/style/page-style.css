@@ -52,5 +52,140 @@ section > header > h2 {
 
 .wave-to-blue {
   position: relative;
+  z-index: -1;
   top: 1em;
+}
+
+.achievements-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.availability {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.availability * {
+  text-align: end;
+  font-size: 28px !important;
+  height: 28px;
+  margin-bottom: auto;
+}
+
+.unavailable {
+  color: var(--dark) !important;
+}
+
+.available {
+  color: var(--light) !important;
+}
+
+.main-header {
+  padding: 2em 0;
+  text-align: center;
+}
+
+.material-icons-round {
+  color: var(--primary);
+}
+
+.pf-wrapper {
+  margin: auto;
+  max-width: 900px;
+}
+
+.inter-section-space {
+  height: 2.5em !important;
+  border: 0;
+  margin: 0;
+}
+
+.pf-wrapper > section > header {
+  display: flex;
+  align-items: center;
+}
+
+.pf-wrapper > section > header > h2 {
+  font-weight: 400;
+}
+
+.section-margin {
+  margin-left: 3.5em;
+}
+
+.card-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.skill-card {
+  width: 246px;
+}
+
+.thing-card {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+.thing-card > header > div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid var(--primary-light);
+  box-shadow: 2px 2px 3px 1px var(--primary-light);
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.tech {
+  margin-top: auto;
+  text-align: end;
+}
+
+.tech > img {
+  height: 28px;
+}
+
+.achievement-link {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.achievement-link-icon {
+  text-align: end;
+  font-size: 38px !important;
+  height: 38px;
+  margin-bottom: auto;
+}
+
+.unavailable {
+  color: var(--dark) !important;
+}
+
+.available {
+  color: var(--light) !important;
+}
+
+.skill-card > header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+}
+.skill-card > header > .material-icons-round {
+  font-size: 1.7em !important;
+  margin-bottom: auto;
+  margin-left: auto;
+  color: var(--secondary-light);
 }
